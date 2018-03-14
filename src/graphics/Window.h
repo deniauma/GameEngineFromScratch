@@ -1,4 +1,6 @@
 #pragma once
+#include <glad/glad.h> 
+#include <GLFW/glfw3.h>
 
 namespace engine {
 	namespace graphics {
@@ -6,13 +8,19 @@ namespace engine {
 		class Window
 		{
 		private:
-			const char* m_Name;
+			const char* m_Title;
 			int m_Width;
 			int m_Height;
+			GLFWwindow* m_Window;
 
 		public:
-			Window();
+			Window(int width, int height, const char* title);
 			~Window();
+
+			void init();
+			bool closed();
+			void update();
+			GLFWwindow* getWindow();
 		};
 
 	}

@@ -69,8 +69,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\mdeniaud\Documents\Perso\projects\GEFS\GameEngineFromScratch\GameEngine\includes;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\mdeniaud\Documents\Perso\projects\GEFS\GameEngineFromScratch\GameEngine\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\mdeniaud\Documents\Perso\projects\3DGameEngine\GameEngineFromScratch\includes;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\mdeniaud\Documents\Perso\projects\3DGameEngine\GameEngineFromScratch\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -79,7 +79,7 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -116,11 +116,52 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\graphics\ShaderUtils.cpp" />
+    <ClCompile Include="src\graphics\ShaderManager.cpp" />
+    <ClCompile Include="src\graphics\ShaderProgram.cpp" />
+    <ClCompile Include="src\glad.c" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\graphics\Window.cpp" />
+    <ClCompile Include="src\graphics\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="includes\glad\glad.h" />
+    <ClInclude Include="includes\GLFW\glfw3.h" />
+    <ClInclude Include="includes\GLFW\glfw3native.h" />
+    <ClInclude Include="includes\glm\common.hpp" />
+    <ClInclude Include="includes\glm\exponential.hpp" />
+    <ClInclude Include="includes\glm\ext.hpp" />
+    <ClInclude Include="includes\glm\fwd.hpp" />
+    <ClInclude Include="includes\glm\geometric.hpp" />
+    <ClInclude Include="includes\glm\glm.hpp" />
+    <ClInclude Include="includes\glm\integer.hpp" />
+    <ClInclude Include="includes\glm\mat2x2.hpp" />
+    <ClInclude Include="includes\glm\mat2x3.hpp" />
+    <ClInclude Include="includes\glm\mat2x4.hpp" />
+    <ClInclude Include="includes\glm\mat3x2.hpp" />
+    <ClInclude Include="includes\glm\mat3x3.hpp" />
+    <ClInclude Include="includes\glm\mat3x4.hpp" />
+    <ClInclude Include="includes\glm\mat4x2.hpp" />
+    <ClInclude Include="includes\glm\mat4x3.hpp" />
+    <ClInclude Include="includes\glm\mat4x4.hpp" />
+    <ClInclude Include="includes\glm\matrix.hpp" />
+    <ClInclude Include="includes\glm\packing.hpp" />
+    <ClInclude Include="includes\glm\trigonometric.hpp" />
+    <ClInclude Include="includes\glm\vec2.hpp" />
+    <ClInclude Include="includes\glm\vec3.hpp" />
+    <ClInclude Include="includes\glm\vec4.hpp" />
+    <ClInclude Include="includes\glm\vector_relational.hpp" />
+    <ClInclude Include="includes\KHR\khrplatform.h" />
+    <ClInclude Include="src\graphics\Camera.h" />
+    <ClInclude Include="src\graphics\ShaderUtils.h" />
+    <ClInclude Include="src\graphics\ShaderManager.h" />
+    <ClInclude Include="src\graphics\ShaderProgram.h" />
+    <ClInclude Include="src\graphics\stb_image.h" />
     <ClInclude Include="src\graphics\Window.h" />
+    <ClInclude Include="src\graphics\Texture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="includes\glm\CMakeLists.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
